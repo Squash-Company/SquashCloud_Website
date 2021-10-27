@@ -1,0 +1,73 @@
+/*======== CARDS ========*/
+
+.container-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.title-page {
+    width: 100%;
+    font: 500 3rem Roboto, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+}
+
+
+.text-privacy-link {
+    font: 500 1.5rem Roboto, sans-serif;
+    color: var(--white);
+}
+
+.text-card.privacy {
+    font: 400 1.3rem Roboto, sans-serif;
+}
+
+a.btn-language{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+a.btn-language:hover{
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+}
+a.btn-language:active{
+    color:#000000;
+    border-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+a.btn-language{
+    display:block;
+    margin:0.4em auto;
+}
+}
+
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 800px) {
+    .container-title {
+        flex-direction: column;
+    }
+    .title-page {
+        font-size: 2rem;
+    }
+    .text-privacy-link{
+        font-size: 1rem;
+    }
+    .text-card.privacy {
+        font-size: 1.2rem;
+    }
+}

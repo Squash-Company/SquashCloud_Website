@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy - Squash</title>
+</head>
+<body>
+    
+    <script>
+        
+    var preferredLanguages = navigator.language
+    var mUrl = refactorUrl(window.location.href);
+    var params = window.location.search.replace("?", "");
+    if(params.includes("type=cloud")){
+        window.open(mUrl + 'workspace/', "_self")
+    }else{
+        //  Check language and redirect to correct pdf file
+        if(preferredLanguages != null || preferredLanguages != ""){
+            preferredLanguages = preferredLanguages.toLowerCase();
+
+            if (preferredLanguages.includes('en')) {
+                window.open( mUrl + 'asset/Squash_Privacy_Policy_EN.pdf', "_self")
+            } else if (preferredLanguages.includes('pt')) {
+                window.open(mUrl +  'asset/Squash_Privacy_Policy_PT_BR.pdf', "_self")
+            }else{
+            window.open(mUrl, "_self")
+        }
+        }
+        //  No language detected, go back to index
+        else{
+            window.open(mUrl, "_self")
+        }
+    }
+
+    //  Method to refactor the url
+    function refactorUrl(url){
+        if (url.indexOf("?") > 0)
+            url = url.substring(0, url.indexOf("?"));
+
+        if(!url.endsWith("/")) 
+            url = url + "/";
+
+            url = url.replace("/index.html", "");
+        url = url.replace("direct/", "");
+        url = url.replace("direct", "");
+        return url;
+    }
+    </script>
+</body>
+</html>
